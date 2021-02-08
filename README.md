@@ -1,5 +1,7 @@
 # autoborg
-Docker image for automatically backing up a volume into a borg repo
+Docker image for automatically backing up a volume into a borg repo.
+
+Docker image is published in [Docker Hub](https://hub.docker.com/r/rohrschacht/autoborg).
 
 ## Usage
 Mount the volume you want to back up under `/origin` and your borg repo under `/target`.
