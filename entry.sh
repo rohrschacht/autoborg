@@ -21,8 +21,12 @@ borg list "$TARGET" &>/dev/null || {
 }
 
 [ ! -z "$PRUNE_ARGS" ] && { 
+	echo "List of archives before pruning:"
+	borg list "$TARGET"
 	echo "Pruning old archives with $PRUNE_ARGS ..." 
 	borg prune ${PRUNE_ARGS} "$TARGET" || { echo "Pruning failed"; exit 1; }
+	echo "List of archives after pruning:"
+	borg list "$TARGET"
 }
 
 exit 0
